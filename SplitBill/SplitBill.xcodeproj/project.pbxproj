@@ -21,6 +21,9 @@
 		2C4813EC191EAD9E0019B47D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4813E8191EAD9E0019B47D /* AppDelegate.m */; };
 		2C4813ED191EAD9E0019B47D /* BillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4813EA191EAD9E0019B47D /* BillViewController.m */; };
 		2C4813EE191EAD9E0019B47D /* BillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4813EB191EAD9E0019B47D /* BillViewController.xib */; };
+		2C481404191F353F0019B47D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C481402191F353F0019B47D /* SettingsViewController.m */; };
+		2C48140A192026C10019B47D /* Primary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C481409192026C10019B47D /* Primary.storyboard */; };
+		2C48140D1920334A0019B47D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C48140C1920334A0019B47D /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		2C4813E9191EAD9E0019B47D /* BillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillViewController.h; sourceTree = "<group>"; };
 		2C4813EA191EAD9E0019B47D /* BillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillViewController.m; sourceTree = "<group>"; };
 		2C4813EB191EAD9E0019B47D /* BillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillViewController.xib; sourceTree = "<group>"; };
+		2C481401191F353F0019B47D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2C481402191F353F0019B47D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		2C481409192026C10019B47D /* Primary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Primary.storyboard; sourceTree = "<group>"; };
+		2C48140B1920334A0019B47D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		2C48140C1920334A0019B47D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,19 +161,24 @@
 		2C4813EF191EADA30019B47D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2C4813F0191EADB20019B47D /* Xib */,
+				2C48140B1920334A0019B47D /* RootViewController.h */,
+				2C48140C1920334A0019B47D /* RootViewController.m */,
+				2C481401191F353F0019B47D /* SettingsViewController.h */,
+				2C481402191F353F0019B47D /* SettingsViewController.m */,
 				2C4813E9191EAD9E0019B47D /* BillViewController.h */,
 				2C4813EA191EAD9E0019B47D /* BillViewController.m */,
+				2C4813F0191EADB20019B47D /* Interface */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		2C4813F0191EADB20019B47D /* Xib */ = {
+		2C4813F0191EADB20019B47D /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				2C481409192026C10019B47D /* Primary.storyboard */,
 				2C4813EB191EAD9E0019B47D /* BillViewController.xib */,
 			);
-			name = Xib;
+			name = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4813C3191EAD260019B47D /* InfoPlist.strings in Resources */,
+				2C48140A192026C10019B47D /* Primary.storyboard in Resources */,
 				2C4813EE191EAD9E0019B47D /* BillViewController.xib in Resources */,
 				2C4813CB191EAD260019B47D /* Images.xcassets in Resources */,
 			);
@@ -267,6 +281,8 @@
 				2C4813EC191EAD9E0019B47D /* AppDelegate.m in Sources */,
 				2C4813C5191EAD260019B47D /* main.m in Sources */,
 				2C4813ED191EAD9E0019B47D /* BillViewController.m in Sources */,
+				2C481404191F353F0019B47D /* SettingsViewController.m in Sources */,
+				2C48140D1920334A0019B47D /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SplitBill/SplitBill-Prefix.pch";
 				INFOPLIST_FILE = "SplitBill/SplitBill-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -399,6 +416,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SplitBill/SplitBill-Prefix.pch";
 				INFOPLIST_FILE = "SplitBill/SplitBill-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +481,7 @@
 				2C4813E3191EAD260019B47D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C4813E4191EAD260019B47D /* Build configuration list for PBXNativeTarget "SplitBillTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +490,7 @@
 				2C4813E6191EAD260019B47D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
