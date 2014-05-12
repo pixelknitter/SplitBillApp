@@ -114,7 +114,13 @@
                             <outletCollection property="gestureRecognizers" destination="urP-7L-Hyg" appends="YES" id="N6o-PX-aAd"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="cwS-wr-Frg"/>
+                    <navigationItem key="navigationItem" title="Bill Split" id="Sms-0O-vmH">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="oEf-J4-b57">
+                            <connections>
+                                <segue destination="xZg-1W-bBT" kind="push" identifier="SettingsViewController" id="w9k-Oy-GMI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billTextField" destination="d6v-Fh-6UI" id="Stx-mZ-5N2"/>
                         <outlet property="costLabel" destination="Fds-dA-AZl" id="Ens-6L-sVr"/>
@@ -233,12 +239,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="416" y="41"/>
+            <point key="canvasLocation" x="422" y="41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="imV-0V-RWM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpQ-F0-Fx8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpQ-F0-Fx8" customClass="NavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PKz-ne-HrX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -253,9 +259,10 @@
             </objects>
             <point key="canvasLocation" x="-40" y="41"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="ndZ-1r-yUs">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXt-86-C9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xZg-1W-bBT" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jas-Ln-Rfz"/>
@@ -264,10 +271,64 @@
                     <view key="view" contentMode="scaleToFill" id="1PO-dq-dn6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l5n-Kt-Erf">
+                                <rect key="frame" x="20" y="101" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onTap:" destination="xZg-1W-bBT" eventType="valueChanged" id="qt1-Bp-reX"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-DV-7Gw">
+                                <rect key="frame" x="203" y="152" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Seats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDX-Rc-KOe">
+                                <rect key="frame" x="20" y="156" width="116" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip Default" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4U-18-yNI">
+                                <rect key="frame" x="107" y="72" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eeb-dJ-cYy" appends="YES" id="iyY-Cd-6Yd"/>
+                        </connections>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Settings" id="3XX-di-nrJ">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;&lt;" id="KKQ-CD-v4E">
+                            <connections>
+                                <action selector="onBack:" destination="xZg-1W-bBT" id="TPP-pi-dVO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="seatTextField" destination="i8E-DV-7Gw" id="CcY-OZ-eIg"/>
+                        <outlet property="tipControl" destination="l5n-Kt-Erf" id="vfa-1T-Mpb"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RXt-86-C9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eeb-dJ-cYy">
+                    <connections>
+                        <action selector="onTap:" destination="xZg-1W-bBT" id="RDi-Qb-l0R"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-40" y="737"/>
         </scene>

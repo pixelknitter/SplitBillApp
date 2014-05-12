@@ -10,6 +10,15 @@
 
 @interface SettingsViewController ()
 
+// Interface
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
+@property (weak, nonatomic) IBOutlet UITextField *seatTextField;
+
+// Actions
+- (IBAction)onBack:(id)sender;
+- (IBAction)onTap:(id)sender;
+- (void)updateValues;
+
 @end
 
 @implementation SettingsViewController
@@ -29,10 +38,40 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  // Grab Defaults
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSInteger tipDefault = [defaults integerForKey:@"tipDefault"];
+  NSInteger seatDefault = [defaults integerForKey:@"seatDefault"];
+  
+  // Set Defaults
+  self.seatTextField.text = [[NSString alloc] initWithFormat:@"%d", seatDefault];
+  self.tipControl.selectedSegmentIndex = tipDefault;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onBack:(id)sender {
+  // dismiss modal view
+  [self updateValues];
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)onTap:(id)sender {
+  [self.view endEditing:YES];
+  [self updateValues];
+}
+
+- (void)updateValues {
+  // Update the settings
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setInteger:self.tipControl.selectedSegmentIndex forKey:@"tipDefault"];
+  [defaults setInteger:[self.seatTextField.text integerValue] forKey:@"seatDefault"];
+  [defaults synchronize];
 }
 
 /*
@@ -43,6 +82,7 @@
  {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
+ // TODO Synchronize settings
  }
  */
 

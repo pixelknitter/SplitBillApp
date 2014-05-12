@@ -1,18 +1,18 @@
 //
-//  RootViewController.m
+//  NavigationController.m
 //  SplitBill
 //
 //  Created by Eddie Freeman on 5/11/14.
 //  Copyright (c) 2014 NinjaSudo Inc. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "NavigationController.h"
 
-@interface RootViewController ()
+@interface NavigationController ()
 
 @end
 
-@implementation RootViewController
+@implementation NavigationController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

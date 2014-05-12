@@ -25,7 +25,7 @@
 
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
-
+- (IBAction)dismissSettings:(id)sender;
 @end
 
 @implementation BillViewController
@@ -40,10 +40,24 @@
   return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  // Assign Title
+  self.title = @"Bill Split";
+  
+  // Grab Defaults
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSInteger tipDefault = [defaults integerForKey:@"tipDefault"];
+  NSInteger seatDefault = [defaults integerForKey:@"seatDefault"];
+  
+  // Set Defaults
+  self.seatLabel.text = [[NSString alloc] initWithFormat:@"%d", seatDefault];
+  self.seatStepper.value = seatDefault;
+  self.tipControl.selectedSegmentIndex = tipDefault;
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.title = @"Bill Split";
   // Do any additional setup after loading the view from its nib.
 }
 
@@ -56,6 +70,10 @@
 - (IBAction)onTap:(id)sender {
   [self.view endEditing:YES];
   [self updateValues];
+}
+
+- (IBAction)dismissSettings:(id)sender {
+  
 }
 
 - (void)updateValues {
@@ -77,9 +95,7 @@
   
   // Set the labels
   self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
-  
   self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalAmount];
-  
   self.costLabel.text = [NSString stringWithFormat:@"$%0.2f", indivCost];
 }
 

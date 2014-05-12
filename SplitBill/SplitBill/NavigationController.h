@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  NavigationController.h
 //  SplitBill
 //
 //  Created by Eddie Freeman on 5/11/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UINavigationController
+@interface NavigationController : UINavigationController
 
 @end
