@@ -58,7 +58,7 @@
 - (IBAction)onBack:(id)sender {
   // dismiss modal view
   [self updateValues];
-  [self dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil]; // doesn't look like this works...
 }
 
 - (IBAction)onTap:(id)sender {

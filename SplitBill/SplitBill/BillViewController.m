@@ -73,7 +73,7 @@
 }
 
 - (IBAction)dismissSettings:(id)sender {
-  
+  [self dismissViewControllerAnimated:YES completion:nil]; // the parent should dismiss the settings, not sure how yet.
 }
 
 - (void)updateValues {
