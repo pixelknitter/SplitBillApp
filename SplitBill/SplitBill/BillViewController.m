@@ -7,6 +7,7 @@
 //
 
 #import "BillViewController.h"
+#import "SettingsViewController.h"
 
 @interface BillViewController ()
 
@@ -25,6 +26,7 @@
 
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
+- (IBAction)onSettingsButton:(id)sender;
 
 @end
 
@@ -35,16 +37,33 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     // Custom initialization
-    self.title = @"Split Bill";
+    
   }
   return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  // Assign Title
+  self.title = @"Bill Split";
+  
+  // Grab Defaults
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSInteger tipDefault = [defaults integerForKey:@"tipDefault"];
+  NSInteger seatDefault = [defaults integerForKey:@"seatDefault"];
+  
+  // Set Defaults
+  self.seatLabel.text = [[NSString alloc] initWithFormat:@"%d", seatDefault];
+  self.seatStepper.value = seatDefault;
+  self.tipControl.selectedSegmentIndex = tipDefault;
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
   // Do any additional setup after loading the view from its nib.
+//  Another way to instantiate the Settings button
+//  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +75,10 @@
 - (IBAction)onTap:(id)sender {
   [self.view endEditing:YES];
   [self updateValues];
+}
+
+- (IBAction)onSettingsButton:(id)sender {
+  [self.navigationController pushViewController:[[SettingsViewController alloc] init] animated:YES];
 }
 
 - (void)updateValues {
@@ -77,10 +100,19 @@
   
   // Set the labels
   self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
-  
   self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalAmount];
-  
   self.costLabel.text = [NSString stringWithFormat:@"$%0.2f", indivCost];
 }
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+*/
 
 @end
