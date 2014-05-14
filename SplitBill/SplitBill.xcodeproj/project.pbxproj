@@ -20,10 +20,9 @@
 		2C4813DE191EAD260019B47D /* SplitBillTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4813DD191EAD260019B47D /* SplitBillTests.m */; };
 		2C4813EC191EAD9E0019B47D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4813E8191EAD9E0019B47D /* AppDelegate.m */; };
 		2C4813ED191EAD9E0019B47D /* BillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4813EA191EAD9E0019B47D /* BillViewController.m */; };
-		2C4813EE191EAD9E0019B47D /* BillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4813EB191EAD9E0019B47D /* BillViewController.xib */; };
+		2C4813EE191EAD9E0019B47D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4813EB191EAD9E0019B47D /* SettingsViewController.xib */; };
 		2C481404191F353F0019B47D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C481402191F353F0019B47D /* SettingsViewController.m */; };
 		2C48140A192026C10019B47D /* Primary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C481409192026C10019B47D /* Primary.storyboard */; };
-		2C481451192039310019B47D /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C481450192039310019B47D /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +54,10 @@
 		2C4813E8191EAD9E0019B47D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2C4813E9191EAD9E0019B47D /* BillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillViewController.h; sourceTree = "<group>"; };
 		2C4813EA191EAD9E0019B47D /* BillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillViewController.m; sourceTree = "<group>"; };
-		2C4813EB191EAD9E0019B47D /* BillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillViewController.xib; sourceTree = "<group>"; };
+		2C4813EB191EAD9E0019B47D /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		2C481401191F353F0019B47D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2C481402191F353F0019B47D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2C481409192026C10019B47D /* Primary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Primary.storyboard; sourceTree = "<group>"; };
-		2C48144F192039310019B47D /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		2C481450192039310019B47D /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +117,6 @@
 		2C4813BE191EAD260019B47D /* SplitBill */ = {
 			isa = PBXGroup;
 			children = (
-				2C48144F192039310019B47D /* NavigationController.h */,
-				2C481450192039310019B47D /* NavigationController.m */,
 				2C4813EF191EADA30019B47D /* ViewControllers */,
 				2C4813E7191EAD9E0019B47D /* AppDelegate.h */,
 				2C4813E8191EAD9E0019B47D /* AppDelegate.m */,
@@ -176,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2C481409192026C10019B47D /* Primary.storyboard */,
-				2C4813EB191EAD9E0019B47D /* BillViewController.xib */,
+				2C4813EB191EAD9E0019B47D /* SettingsViewController.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -258,7 +253,7 @@
 			files = (
 				2C4813C3191EAD260019B47D /* InfoPlist.strings in Resources */,
 				2C48140A192026C10019B47D /* Primary.storyboard in Resources */,
-				2C4813EE191EAD9E0019B47D /* BillViewController.xib in Resources */,
+				2C4813EE191EAD9E0019B47D /* SettingsViewController.xib in Resources */,
 				2C4813CB191EAD260019B47D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +275,6 @@
 			files = (
 				2C4813EC191EAD9E0019B47D /* AppDelegate.m in Sources */,
 				2C4813C5191EAD260019B47D /* main.m in Sources */,
-				2C481451192039310019B47D /* NavigationController.m in Sources */,
 				2C4813ED191EAD9E0019B47D /* BillViewController.m in Sources */,
 				2C481404191F353F0019B47D /* SettingsViewController.m in Sources */,
 			);

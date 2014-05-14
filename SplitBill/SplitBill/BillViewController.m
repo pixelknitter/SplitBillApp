@@ -7,6 +7,7 @@
 //
 
 #import "BillViewController.h"
+#import "SettingsViewController.h"
 
 @interface BillViewController ()
 
@@ -25,7 +26,8 @@
 
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
-- (IBAction)dismissSettings:(id)sender;
+- (IBAction)onSettingsButton:(id)sender;
+
 @end
 
 @implementation BillViewController
@@ -59,6 +61,9 @@
 {
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
+//  Another way to instantiate the Settings button
+//  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,8 +77,8 @@
   [self updateValues];
 }
 
-- (IBAction)dismissSettings:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil]; // the parent should dismiss the settings, not sure how yet.
+- (IBAction)onSettingsButton:(id)sender {
+  [self.navigationController pushViewController:[[SettingsViewController alloc] init] animated:YES];
 }
 
 - (void)updateValues {

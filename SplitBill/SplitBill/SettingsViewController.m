@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *seatTextField;
 
 // Actions
-- (IBAction)onBack:(id)sender;
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
 
@@ -53,12 +52,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)onBack:(id)sender {
-  // dismiss modal view
-  [self updateValues];
-  [self dismissViewControllerAnimated:YES completion:nil]; // doesn't look like this works...
 }
 
 - (IBAction)onTap:(id)sender {
